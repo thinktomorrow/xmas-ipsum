@@ -57,6 +57,9 @@
         "joyful",
         "snowy",
         "frosty"
+      ],
+      "preposition": [
+        "down", "into", "up", "on", "upon", "below", "above", "through", "across", "towards"
       ]
     },
     "negative": {
