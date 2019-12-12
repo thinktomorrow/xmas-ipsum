@@ -1,11 +1,11 @@
 export let sentenceFormats = [
-    ['adjectives', 'nouns', 'adverbs', 'verbs', 'nouns', 'adverbs', 'verbs'],
-    ['adjectives', 'nouns', 'verbs'],
-    ['adjectives', 'nouns', 'adverbs', 'verbs', 'nouns'],
-    ['nouns', 'verbs', 'adverbs', 'nouns'],
-    ['nouns', 'verbs', 'adjectives', 'nouns'],
-    ['nouns', 'verbs', 'nouns'],
-    ['adjectives', 'nouns', 'adverbs', 'verbs', 'preposition', 'adjectives', 'nouns'],
+    ['adjective', 'noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
+    ['adjective', 'noun', 'verb'],
+    ['adjective', 'noun', 'adverb', 'verb', 'noun'],
+    ['noun', 'verb', 'adverb', 'noun'],
+    ['noun', 'verb', 'adjective', 'noun'],
+    ['noun', 'verb', 'noun'],
+    ['adjective', 'noun', 'adverb', 'verb', 'preposition', 'adjective', 'noun'],
 ]
 
 export default{
