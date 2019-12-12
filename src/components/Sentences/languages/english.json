@@ -1,0 +1,68 @@
+{
+    "neutral": {
+      "noun": [],
+      "verb": [],
+      "adjective": [],
+      "adverb": []
+    },
+    "positive": {
+      "noun": [
+        "reindeer",
+        "santa claus",
+        "family",
+        "bells",
+        "gingerbread",
+        "chimney",
+        "gifts",
+        "turkey",
+        "bow",
+        "candy",
+        "carols",
+        "celebration"
+    ],
+      "verb": [
+        "sing",
+        "dance",
+        "caroling",
+        "celebrate",
+        "love",
+        "enjoy",
+        "eat",
+        "drink",
+        "ice skate",
+        "decorate",
+        "laugh",
+        "receive"
+    ],
+      "adjective": [
+        "beautiful",
+        "pretty",
+        "jolly",
+        "happy",
+        "funny",
+        "holly jolly",
+        "warm",
+        "merry",
+        "nice",
+        "sweet",
+        "cute",
+        "cold"
+      ],
+      "adverb": [
+        "elegantly",
+        "wonderfully",
+        "joy",
+        "happily",
+        "lovingly",
+        "joyful",
+        "snowy",
+        "frosty"
+      ]
+    },
+    "negative": {
+      "noun": [],
+      "verb": [],
+      "adjective": [],
+      "adverb": []
+    }
+  }

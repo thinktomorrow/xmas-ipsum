@@ -1,6 +1,6 @@
-const translations = require('./languages/dutch.json');
+const translations = require('./languages/english.json');
 
-export let sentenceFormats = [
+const sentenceFormats = [
     ['adjective', 'noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
     ['adjective', 'noun', 'verb'],
     ['adjective', 'noun', 'adverb', 'verb', 'noun'],
@@ -13,7 +13,13 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
-console.log(numberOfSentences, mood);
+        console.log(numberOfSentences);
+        let sentence = '';
+        sentenceFormats[0].forEach((item)=>{
+            sentence += ' ' + this.findRandomWord(item, mood);
+        })
+
+        console.log(sentence);
         // nouns
         // verbs
         // adjectives
