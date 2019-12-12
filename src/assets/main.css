@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900&display=swap');
+
+html, body, h1, button, p {
+    font-family: 'Heebo', sans-serif;
+    @apply text-gray-800;
+}
+
+h1 {
+    @apply text-4xl font-black;
+}
+
+.btn {
+    @apply py-2 px-4 rounded-full text-white;
+}
+
+.hidden {
+    display: none;
+}
+
+.checkbox-container {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px 20px 0 20px;
+    overflow: hidden;
+    border-radius: 9999px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.checkbox-circle {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.checkbox-circle:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(315deg, rgba(255,22,84,1) 0%, rgba(255,22,84,1) 65%, rgba(255,255,255,1) 100%);
+    /* background-color: #FF1654; */
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+.checkbox:checked + .checkbox-circle:before {
+    right: 8px;
+    left: 42px;
+}
