@@ -9,13 +9,19 @@
 
     <div v-if="sentences">
       <h1>Results</h1>
-      <p v-html="sentences"></p>
+      <p class="text-lg m-20" v-html="sentences"></p>
 
-      <button @click="tryAgain" class="p-4 bg-red-400 text-white">Try again</button>
+      <div class="mt-8">
+        <button @click="tryAgain" class="p-4 bg-red-400 text-white">Try again</button>
+      </div>
     </div>
     <div v-else>
-      <button @click="letsGenerate" class="p-4 bg-red-400 text-white">Let's make some jolly jibberish</button>
+      <h1>Results</h1>
+      <div class="mt-8">
+        <button @click="letsGenerate" class="p-4 bg-red-400 text-white">Let's make some jolly jibberish</button>
+      </div>
     </div>
+
 
   </div>
 </template>
@@ -34,7 +40,7 @@ export default {
     }
   },
   mounted() {
-    // 
+    //
   },
   methods:{
     letsGenerate(){
