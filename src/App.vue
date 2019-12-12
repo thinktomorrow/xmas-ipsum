@@ -34,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    console.log(SentenceGenerator.generate(5, 'positive'));
+    // 
   },
   methods:{
     letsGenerate(){
