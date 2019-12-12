@@ -10,29 +10,29 @@
         "reindeer",
         "santa claus",
         "family",
-        "bells",
+        "bell",
         "gingerbread",
         "chimney",
-        "gifts",
+        "gift",
         "turkey",
         "bow",
         "candy",
-        "carols",
+        "carol",
         "celebration"
     ],
       "verb": [
-        "sing",
-        "dance",
-        "caroling",
-        "celebrate",
-        "love",
-        "enjoy",
-        "eat",
-        "drink",
-        "ice skate",
-        "decorate",
-        "laugh",
-        "receive"
+        "sings",
+        "dances",
+        "carolings",
+        "celebrates",
+        "loves",
+        "enjoys",
+        "eats",
+        "drinks",
+        "ice skates",
+        "decorates",
+        "laughes",
+        "receives"
     ],
       "adjective": [
         "beautiful",
@@ -59,7 +59,7 @@
         "frosty"
       ],
       "preposition": [
-        "down", "into", "up", "on", "upon", "below", "above", "through", "across", "towards"
+        "down", "into", "up", "on", "next to", "below", "above", "through", "across", "towards"
       ]
     },
     "negative": {

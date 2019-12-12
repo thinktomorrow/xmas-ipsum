@@ -1,8 +1,10 @@
 const translations = require('./languages/english.json');
 
 export let sentenceFormats = [
-    "%ADJECTIVE% %NOUN% totally %VERB% %NOUN%"
-    // ['adjective', 'noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
+    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%",
+    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% the %ADJECTIVE% %ADJECTIVE% %NOUN%",
+    "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%",
+    // ['adjective', 'adjective''noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
     // ['adjective', 'noun', 'verb'],
     // ['adjective', 'noun', 'adverb', 'verb', 'noun'],
     // ['noun', 'verb', 'adverb', 'noun'],
@@ -14,14 +16,13 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
+
         console.log(this.generateSentence(mood), numberOfSentences);
 
     },
 
     generateSentence(mood){
-        let format = sentenceFormats[0];
-
-        return format.replace(/%\w+%/g, (placeholder)=>{
+        return this._findRandomSentenceFormat().replace(/%\w+%/g, (placeholder)=>{
             return this._findRandomWord(placeholder.replace(/%/g,'').toLowerCase(), mood);
         })
     },
