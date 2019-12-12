@@ -1,7 +1,10 @@
+const translations = require('./languages/dutch.json');
+
 export default{
 
-    generate(numberOfSentences = 20, mood = "neutral"){
-        console.log('dididi');
+    generate(){
+    // generate(numberOfSentences = 20, mood = "neutral"){
+        console.dir(translations);
 
         // nouns
         // verbs
@@ -9,6 +12,10 @@ export default{
         // adverbs
 
         // random
-    }
+    },
+
+    // findRandomWord(typeOfWord, mood){
+    //
+    // },
 
 }
