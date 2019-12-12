@@ -12,6 +12,8 @@
 </template>
 
 <script>
+  import SentenceGenerator from "./components/Sentences/SentenceGenerator";
+
 import PageGenerate from "./components/Pages/Generate";
 import PageResult from "./components/Pages/Result";
 
@@ -23,8 +25,11 @@ export default {
   },
   data(){
     return {
-      page: 'result',
+      page: 'generate',
     }
+  },
+  mounted() {
+    SentenceGenerator.generate();
   }
 }
 </script>
