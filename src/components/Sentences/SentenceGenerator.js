@@ -1,18 +1,20 @@
-const translations = require('./languages/dutch.json');
+const translations = require('./languages/english.json');
 
 export let sentenceFormats = [
-    ['adjective', 'noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
-    ['adjective', 'noun', 'verb'],
-    ['adjective', 'noun', 'adverb', 'verb', 'noun'],
-    ['noun', 'verb', 'adverb', 'noun'],
-    ['noun', 'verb', 'adjective', 'noun'],
-    ['noun', 'verb', 'noun'],
-    ['adjective', 'noun', 'adverb', 'verb', 'preposition', 'adjective', 'noun'],
+    "%ADJECTIVE% %NOUN% totally %VERB% %NOUN%"
+    // ['adjective', 'noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
+    // ['adjective', 'noun', 'verb'],
+    // ['adjective', 'noun', 'adverb', 'verb', 'noun'],
+    // ['noun', 'verb', 'adverb', 'noun'],
+    // ['noun', 'verb', 'adjective', 'noun'],
+    // ['noun', 'verb', 'noun'],
+    // ['adjective', 'noun', 'adverb', 'verb', 'preposition', 'adjective', 'noun'],
 ]
 
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
+        console.log(this.generateSentence(mood));
 console.log(numberOfSentences, mood);
         // nouns
         // verbs
@@ -22,7 +24,22 @@ console.log(numberOfSentences, mood);
         // random
     },
 
-    findRandomWord(typeOfWord, mood){
+    generateSentence(mood){
+        let format = sentenceFormats[0];
+
+        return format.replace(/%\w+%/g, (placeholder)=>{
+            return this._findRandomWord(placeholder.replace(/%/g,'').toLowerCase(), mood);
+        })
+    },
+
+    _findRandomSentenceFormat(){
+
+        const randomKey = Math.floor(Math.random() * sentenceFormats.length);
+
+        return sentenceFormats[randomKey];
+    },
+
+    _findRandomWord(typeOfWord, mood){
 
         const words = translations[mood][typeOfWord];
 
