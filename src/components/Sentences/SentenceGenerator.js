@@ -14,14 +14,8 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
-        console.log(this.generateSentence(mood));
-console.log(numberOfSentences, mood);
-        // nouns
-        // verbs
-        // adjectives
-        // adverbs
+        console.log(this.generateSentence(mood), numberOfSentences);
 
-        // random
     },
 
     generateSentence(mood){
