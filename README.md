@@ -1,5 +1,5 @@
 # xmas-ipsum
-Something to bump up the holiday spirit at the office
+Something merry to bump up the holiday spirit at the office
 
 ## Project setup
 ```
