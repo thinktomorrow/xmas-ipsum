@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    console.log(SentenceGenerator.generateSentence('positive'));
+    console.log(SentenceGenerator.generate(5, 'positive'));
   }
 }
 </script>

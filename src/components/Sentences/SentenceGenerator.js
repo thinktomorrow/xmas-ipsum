@@ -15,15 +15,23 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
+        console.log(this.generateParagraph(mood, numberOfSentences));
+    },
 
-        console.log(this.generateSentence(mood), numberOfSentences);
+    generateParagraph(mood, numberOfSentences) {
+        let paragraph = "";
 
+        for (var i = 0; i < numberOfSentences; i++) {
+            paragraph += this.generateSentence(mood);
+        }
+
+        return paragraph;
     },
 
     generateSentence(mood){
         return this._findRandomSentenceFormat().replace(/%\w+%/g, (placeholder)=>{
             return this._findRandomWord(placeholder.replace(/%/g,'').toLowerCase(), mood);
-        })
+        });
     },
 
     _findRandomSentenceFormat(){
