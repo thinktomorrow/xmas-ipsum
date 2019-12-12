@@ -10,7 +10,7 @@
             SLIDER GOES HERE
         </p>
 
-        <button class="p-4 bg-red-400 text-white">GENERATE</button>
+        <button @click="letsGenerate" class="p-4 bg-red-400 text-white">GENERATE</button>
 
     </div>
 </template>
@@ -22,6 +22,14 @@
         },
         data(){
             return {}
+        },
+        methods:{
+            letsGenerate(){
+                // Generate sentences
+
+                // Show results
+                this.$emit('changepage', 'result');
+            }
         }
     }
 </script>

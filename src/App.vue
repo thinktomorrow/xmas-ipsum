@@ -6,30 +6,39 @@
         <path fill="#FFFFFF" d="M36.9,21.5v-2h-4v-4h-5v4h-7v-4h-5v4h-3v2h3v8.9c0,1.4,0.4,2.4,1.1,3.1c0.7,0.7,1.8,1.1,3.3,1.1c1,0,1.9-0.1,2.6-0.3c0.7-0.2,1-0.5,2-0.7v-1.2c0,0-0.5,0.1-1,0.1s-0.8,0.1-1.1,0.1c-0.8,0-1.3-0.2-1.6-0.7s-0.3-1.3-0.3-2.4v-8h7v8.9c0,1.4,0.2,2.4,1,3.1c0.7,0.7,1.8,1.1,3.3,1.1c1,0,2-0.1,2.7-0.3s1.1-0.5,2.1-0.7v-1.2c0,0-0.6,0.1-1.1,0.1s-0.9,0.1-1.2,0.1c-0.8,0-1.2-0.2-1.5-0.7s-0.3-1.3-0.3-2.4v-8H36.9z"></path>
       </svg>
     </div>
-    <page-generate v-if="page == 'generate'"></page-generate>
-    <page-result v-if="page == 'result'"></page-result>
+
+    <div v-if="sentences">
+      <h1>Results</h1>
+      <p v-html="sentences"></p>
+    </div>
+    <div v-else>
+      <button @click="letsGenerate" class="p-4 bg-red-400 text-white">Let's make some jolly jibberish</button>
+    </div>
+
   </div>
 </template>
 
 <script>
 import SentenceGenerator from "./components/Sentences/SentenceGenerator.js";
 
-import PageGenerate from "./components/Pages/Generate";
-import PageResult from "./components/Pages/Result";
-
 export default {
   name: 'app',
   components: {
-    PageGenerate,
-    PageResult,
+
   },
   data(){
     return {
-      page: 'generate',
+        sentences: '',
     }
   },
   mounted() {
     console.log(SentenceGenerator.generate(5, 'positive'));
+  },
+  methods:{
+    letsGenerate(){
+      // Generate sentences
+      this.sentences = SentenceGenerator.generate(5, 'positive');
+    }
   }
 }
 </script>

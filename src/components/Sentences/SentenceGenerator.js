@@ -15,14 +15,14 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
-        console.log(this.generateParagraph(mood, numberOfSentences));
+        return this.generateParagraph(numberOfSentences, mood);
     },
 
-    generateParagraph(mood, numberOfSentences) {
+    generateParagraph(numberOfSentences, mood) {
         let paragraph = "";
 
-        for (var i = 0; i < numberOfSentences; i++) {
-            paragraph += this.generateSentence(mood);
+        for (let i = 0; i < numberOfSentences; i++) {
+            paragraph += ' ' + this.generateSentence(mood);
         }
 
         return paragraph;
