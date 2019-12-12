@@ -10,6 +10,8 @@
     <div v-if="sentences">
       <h1>Results</h1>
       <p v-html="sentences"></p>
+
+      <button @click="tryAgain" class="p-4 bg-red-400 text-white">Try again</button>
     </div>
     <div v-else>
       <button @click="letsGenerate" class="p-4 bg-red-400 text-white">Let's make some jolly jibberish</button>
@@ -38,6 +40,9 @@ export default {
     letsGenerate(){
       // Generate sentences
       this.sentences = SentenceGenerator.generate(5, 'positive');
+    },
+    tryAgain(){
+      this.sentences = '';
     }
   }
 }
