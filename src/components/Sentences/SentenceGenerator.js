@@ -22,8 +22,8 @@ export default{
         // random
     },
 
-    // findRandomWord(typeOfWord, mood){
-    //
-    // },
+    findRandomWord(typeOfWord, mood){
+        console.dir(translations[mood]);
+    },
 
 }

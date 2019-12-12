@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    SentenceGenerator.generate();
+    SentenceGenerator.findRandomWord('noun', 'positive');
   }
 }
 </script>
