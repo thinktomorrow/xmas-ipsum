@@ -1,16 +1,15 @@
 const translations = require('./languages/english.json');
 
 export let sentenceFormats = [
-    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%",
-    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% the %ADJECTIVE% %ADJECTIVE% %NOUN%",
-    "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%",
-    // ['adjective', 'adjective''noun', 'adverb', 'verb', 'noun', 'adverb', 'verb'],
-    // ['adjective', 'noun', 'verb'],
-    // ['adjective', 'noun', 'adverb', 'verb', 'noun'],
-    // ['noun', 'verb', 'adverb', 'noun'],
-    // ['noun', 'verb', 'adjective', 'noun'],
-    // ['noun', 'verb', 'noun'],
-    // ['adjective', 'noun', 'adverb', 'verb', 'preposition', 'adjective', 'noun'],
+    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%.",
+    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% the %ADJECTIVE% %ADJECTIVE% %NOUN%.",
+    "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%.",
+    "What if %NOUN% %VERB% like a %ADJECTIVE% %NOUN%, do you feel %ADVERB%?",
+    "Nothing beats a %ADJECTIVE% %NOUN% with a %ADJECTIVE% %NOUN%.",
+    "%NOUN% is soooooooo %ADJECTIVE%.",
+    "%NOUN% %VERB% %ADVERB%!",
+    "%ADVERB% %VERB% %NOUN%.",
+    "%ADJECTIVE% %ADJECTIVE% %ADJECTIVE% %NOUN% is warm as %NOUN%.",
 ]
 
 export default{
