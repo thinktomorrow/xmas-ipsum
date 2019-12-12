@@ -11,6 +11,7 @@
     "axios": "^0.19.0",
     "core-js": "^3.4.3",
     "lottie-web": "^5.5.10",
+    "json-loader": "^0.5.7",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10"
   },

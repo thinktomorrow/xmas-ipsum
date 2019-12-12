@@ -18,9 +18,7 @@
             </div>
         </div>
 
-        <div class="flex justify-center">
-            <button class="btn bg-red-500">Generate</button>
-        </div>
+        <button @click="letsGenerate" class="p-4 bg-red-400 text-white">GENERATE</button>
 
     </div>
 </template>
@@ -82,6 +80,14 @@
                     merryAnimationContainer.classList.remove('hidden');
                 }
             })
+        },
+        methods:{
+            letsGenerate(){
+                // Generate sentences
+
+                // Show results
+                this.$emit('changepage', 'result');
+            }
         }
     }
 </script>
