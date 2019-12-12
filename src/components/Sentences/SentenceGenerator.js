@@ -13,7 +13,7 @@ export let sentenceFormats = [
 export default{
 
     generate(numberOfSentences = 20, mood = "neutral"){
-
+console.log(numberOfSentences, mood);
         // nouns
         // verbs
         // adjectives
@@ -23,7 +23,16 @@ export default{
     },
 
     findRandomWord(typeOfWord, mood){
-        console.dir(translations[mood]);
+
+        const words = translations[mood][typeOfWord];
+
+        if(!words) {
+            throw new Error('Invalid language file setup for ' + mood + ', ' + typeOfWord);
+        }
+
+        const randomKey = Math.floor(Math.random() * words.length);
+
+        return words[randomKey];
     },
 
 }

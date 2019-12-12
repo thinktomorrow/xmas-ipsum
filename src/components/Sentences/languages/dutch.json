@@ -1,20 +1,20 @@
 {
   "neutral": {
-    "nouns": [],
-    "verbs": [],
-    "adjectives": [],
-    "adverbs": []
+    "noun": [],
+    "verb": [],
+    "adjective": [],
+    "adverb": []
   },
   "positive": {
-    "nouns": [],
-    "verbs": [],
-    "adjectives": [],
-    "adverbs": []
+    "noun": [],
+    "verb": [],
+    "adjective": [],
+    "adverb": []
   },
   "negative": {
-    "nouns": [],
-    "verbs": [],
-    "adjectives": [],
-    "adverbs": []
+    "noun": [],
+    "verb": [],
+    "adjective": [],
+    "adverb": []
   }
 }
