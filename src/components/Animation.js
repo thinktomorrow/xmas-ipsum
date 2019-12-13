@@ -39,11 +39,11 @@ export default{
 
         christmasSwitch.addEventListener('change', function() {
             if(this.checked) {
-                eerieAnimationContainer.classList.remove('hidden');
-                merryAnimationContainer.classList.add('hidden');
-            } else {
                 eerieAnimationContainer.classList.add('hidden');
                 merryAnimationContainer.classList.remove('hidden');
+            } else {
+                eerieAnimationContainer.classList.remove('hidden');
+                merryAnimationContainer.classList.add('hidden');
             }
         })
     }

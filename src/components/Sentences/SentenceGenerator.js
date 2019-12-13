@@ -23,9 +23,10 @@ export default{
 
         for (let i = 0; i < numberOfSentences; i++) {
             paragraph += ' ' + this.generateSentence(mood);
+            if(i > 0 && 0 === i % 5) paragraph += '</p><p>';
         }
 
-        return paragraph;
+        return '<p>' + paragraph + '</p>';
     },
 
     generateSentence(mood){
