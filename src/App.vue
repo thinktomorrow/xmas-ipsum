@@ -22,15 +22,18 @@
 
     <div class="text-center mt-16">
       <div v-if="sentences">
-        <div class="result-content text-lg" v-html="sentences"></div>
+        <div class="result-content text-lg" v-html="sentencesHtml"></div>
 
         <div class="mt-8">
-          <button @click="tryAgain" class="p-4 bg-red-400 text-white rounded">Try again</button>
+          <button @click="copyToClipBoard" class="p-4 mr-2 bg-red-400 text-white rounded">Copy to your clipboard</button>
+          <a @click="tryAgain" class="block text-red-400 cursor-pointer">or try again</a>
         </div>
       </div>
       <div v-else>
         <div class="mt-8">
-          <button @click="letsGenerate" class="p-4 bg-red-400 text-white rounded">Let's make some jolly jibberish</button>
+          <button @click="letsGenerate" class="p-4 bg-red-400 text-white rounded" :style="this.moodChecker ? 'background-color:#124718;' : 'background-color:#562e25;'">
+            Let's make some <template v-if="this.moodChecker">jolly</template><template v-else>hollow</template> jibberish
+          </button>
         </div>
       </div>
     </div>
@@ -41,6 +44,7 @@
 <script>
 import SentenceGenerator from "./components/Sentences/SentenceGenerator.js";
 import Animation from "./components/Animation";
+const copy = require('copy-text-to-clipboard');
 
 export default {
   name: 'app',
@@ -58,13 +62,20 @@ export default {
       Animation.loadAnimation('eerie-animation');
       Animation.loadSwitch();
   },
+  computed:{
+    sentencesHtml(){
+      return '<p>'+ this.sentences.replace(/\n\n/g, '</p><p>')  + '</p>';
+    }
+  },
   methods:{
     letsGenerate(){
-      console.log(this.moodChecker);
-      this.sentences = SentenceGenerator.generate(20, 'positive');
+      this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
     },
     tryAgain(){
       this.sentences = '';
+    },
+    copyToClipBoard(){
+      copy(this.sentences);
     }
   }
 }

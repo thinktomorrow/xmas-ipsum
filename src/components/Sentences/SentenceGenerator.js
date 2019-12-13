@@ -3,6 +3,8 @@ const translations = require('./languages/english.json');
 export let sentenceFormats = [
     "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%.",
     "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% the %ADJECTIVE% %ADJECTIVE% %NOUN%.",
+    "The %ADJECTIVE% %NOUN% %ADVERB% %VERB%",
+    "While my %ADJECTIVE% %NOUN% gently %VERB%",
     "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%.",
     "What if %NOUN% %VERB% like a %ADJECTIVE% %NOUN%, do you feel %ADVERB%?",
     "Nothing beats a %ADJECTIVE% %NOUN% with a %ADJECTIVE% %NOUN%.",
@@ -10,6 +12,10 @@ export let sentenceFormats = [
     "%NOUN% %VERB% %ADVERB%!",
     "%ADVERB% %VERB% %NOUN%.",
     "%ADJECTIVE% %ADJECTIVE% %ADJECTIVE% %NOUN% is warm as %NOUN%.",
+    "Ever so %ADVERB%, ever so %ADVERB%",
+    "On Christmas eve, every %NOUN% %VERB% %ADVERB%",
+    "%NOUN% %VERB% and %VERB%. %ADVERB%!",
+    "%VERB% and %VERB%, yes it's the %NOUN%",
 ]
 
 export default{
@@ -19,20 +25,22 @@ export default{
     },
 
     generateParagraph(numberOfSentences, mood) {
-        let paragraph = "";
+        let paragraphs = "";
 
         for (let i = 0; i < numberOfSentences; i++) {
-            paragraph += ' ' + this.generateSentence(mood);
-            if(i > 0 && 0 === i % 5) paragraph += '</p><p>';
+            paragraphs += ' ' + this.generateSentence(mood);
+            if(i > 0 && 0 === i % 5) paragraphs += '\n\n';
         }
 
-        return '<p>' + paragraph + '</p>';
+        return paragraphs;
     },
 
     generateSentence(mood){
-        return this._findRandomSentenceFormat().replace(/%\w+%/g, (placeholder)=>{
+        const sentence = this._findRandomSentenceFormat().replace(/%\w+%/g, (placeholder)=>{
             return this._findRandomWord(placeholder.replace(/%/g,'').toLowerCase(), mood);
         });
+
+        return this._capitalize(sentence);
     },
 
     _findRandomSentenceFormat(){
@@ -54,5 +62,9 @@ export default{
 
         return words[randomKey];
     },
+
+    _capitalize: function(value){
+        return value.charAt(0).toUpperCase() + value.slice(1);
+    }
 
 }
