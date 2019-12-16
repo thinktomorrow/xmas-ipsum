@@ -1,44 +1,59 @@
 <template>
-  <div id="app" class="w-3/5 mx-auto py-16">
-
-    <h1 class="text-center">Don't know what to write on your Xmas card?</h1>
-
-    <div style="height: 320px" class="my-8">
+  <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green text-black' : 'bg-grey text-white'">
+  <div class="w-3/5 mx-auto py-8">
+    <header class="text-center mt-3 text-white relative z-20">
+      <h1 class="text-shadow font-base leading-none capitalize tracking-widest">CHRISTMAS IPSUM</h1>
+      <p class="text-white">Don't know what to write on your Xmas card? <a href="https://thinktomorrow.be/wie-we-zijn" class="underline hover:bg-black hover:text-white">We</a>'ve got you covered. ⤵️</p>
+    </header>
+    <hr class="w-1/2 mx-auto my-12 opacity-25">
+    <div class="text-center relative z-20">
+      <h2 class="text-white text-4xl" :class="this.moodChecker ? 'font-merry' : 'font-eerie'">Which Christmas do you prefer?</h2>
+    </div>
+    <div style="height: 450px" class="z-20 relative -mt-10">
       <div id="merry-animation" class="h-full"></div>
       <div id="eerie-animation" class="h-full hidden"></div>
     </div>
 
-    <div class="flex justify-center relative -mt-20 z-10">
+    <div class="flex justify-center text-center relative z-20 -mt-20">
       <div class="flex">
-        <p class="text-center">EERIE</p>
+        <p class="text-white text-center font-eerie text-3xl">Eerie</p>
         <div class="checkbox-container">
           <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
           <div class="checkbox-circle bg-red-100"></div>
         </div>
-        <p class="text-center">MERRY</p>
+        <p class="text-white text-center font-merry text-3xl">Merry</p>
       </div>
     </div>
 
 
-    <div class="text-center mt-16">
+    <div class="w-2/3 mx-auto text-center mt-16 relative z-20">
       <div v-if="sentences">
         <div class="result-content text-lg" v-html="sentencesHtml"></div>
 
-        <div class="mt-8">
-          <button @click="copyToClipBoard" class="p-4 mr-2 bg-red-400 text-white rounded">Copy to your clipboard </button>
-          <a @click="tryAgain" class="block text-red-400 cursor-pointer">or try again</a>
+        <div class="mt-8 mb-24">
+          <button @click="copyToClipBoard" class="btn" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
+          <a @click="tryAgain" class="block cursor-pointer"  :class="this.moodChecker ? 'text-red-600' : ' text-red-400'">or try again</a>
         </div>
       </div>
+
       <div v-else>
-        <div class="mt-8">
-          <button @click="letsGenerate" class="p-4 bg-red-400 text-white rounded" :style="this.moodChecker ? 'background-color:#124718;' : 'background-color:#562e25;'">
-            Let's make some <template v-if="this.moodChecker">jolly</template><template v-else>hollow</template> jibberish
+        <div class="mt-8 mb-24">
+          <button @click="letsGenerate" class="btn -with-element" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500 text-black'">
+            Generate some
+              <template v-if="this.moodChecker">jolly</template>
+              <template v-else >hollow</template>
+            text
           </button>
         </div>
       </div>
     </div>
 
-  </div>
+      <!-- <div class="border-dasher" :class="this.moodChecker ? 'border-dotted' : 'border-dashed'"></div>   -->
+    </div>
+
+	<footer class="w-full fixed z-0 bottom-0 left-0 right-0 h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-contain bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
+    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 pb-4 text-xs hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
+  </main>
 </template>
 
 <script>
@@ -82,8 +97,3 @@ export default {
 </script>
 
 <style src="./assets/main.css" />
-<style>
-  .result-content p{
-    margin-bottom:1rem;
-  }
-</style>

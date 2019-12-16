@@ -2,19 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Heebo:500,900|Mountains+of+Christmas|Sacramento&display=swap');
 
-html, body, h1, button, p {
+html, body, button, p {
     font-family: 'Heebo', sans-serif;
-    @apply text-gray-800;
+    font-weight: 500;
+    /* @apply text-gray-800; */
 }
+.font-base{ font-family: 'Heebo', sans-serif; font-weight: 900;}
+.font-merry{ font-family: 'Sacramento', cursive; }
+.font-eerie{ font-family: 'Mountains of Christmas', cursive; }
+
+.font-merry.text-shadow{ text-shadow: 3px 3px 0px #124717, 5px 5px 0px rgba(0,0,0,0.5)}
+.font-eerie.text-shadow{ text-shadow: 3px 3px 0px #1e1e1e, 5px 5px 0px rgba(0,0,0,0.75)}
+
+.bg-grey{ background-color: #1e1e1e; }
+.bg-green{ background-color: #124717; }
+.bg-brown{ background-color: #332424; }
 
 h1 {
-    @apply text-4xl font-black;
+    @apply text-6xl font-black text-white;
 }
 
+
 .btn {
-    @apply py-2 px-4 rounded-full text-white;
+    @apply px-8 py-4 rounded-full shadow-2xl text-white;
 }
 
 .hidden {
@@ -68,4 +81,38 @@ h1 {
 .checkbox:checked + .checkbox-circle:before {
     right: 8px;
     left: 42px;
+}
+
+.result-content p{
+    margin-bottom:1rem;
+  }
+
+.h-half{
+    height: 50vh;
+}
+
+.-with-element::after{
+    content: '';
+    /* background-image: url("https://image.flaticon.com/icons/png/512/892/892817.png"); */
+    background-image: url("https://image.flaticon.com/icons/png/512/1359/1359035.png");
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: -15px;
+    background-size: contain;
+    left: 48%;
+}
+
+.border-dasher{
+    @apply border-t-8 border-r-8 border-l-8 fixed z-10 mx-auto my-auto top-0 left-0 ;
+    width:98vw; height: 98vh;
+    margin-left: 1vw; margin-top: 2vh;
+}
+
+hr {
+    background-image: linear-gradient(90deg, transparent, white, transparent);
+    border: 0;
+    height: 1px;
 }
