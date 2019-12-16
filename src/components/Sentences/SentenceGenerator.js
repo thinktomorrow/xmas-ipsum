@@ -1,21 +1,21 @@
 const translations = require('./languages/english.json');
 
 export let sentenceFormats = [
-    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%.",
+    "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% %PREPOSITION% the %NOUN%. %EMOJI%",
     "The %ADJECTIVE% %ADJECTIVE% %NOUN% %VERB% the %ADJECTIVE% %ADJECTIVE% %NOUN%.",
-    "The %ADJECTIVE% %NOUN% %ADVERB% %VERB%",
-    "While my %ADJECTIVE% %NOUN% gently %VERB%",
-    "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%.",
+    "The %ADJECTIVE% %NOUN% %ADVERB% %VERB%. %EMOJI%",
+    "While my %ADJECTIVE% %NOUN% gently %VERB%.",
+    "%NOUN% %VERB% and %VERB% and %ADVERB% %VERB%. %EMOJI%",
     "What if %NOUN% %VERB% like a %ADJECTIVE% %NOUN%, do you feel %ADVERB%?",
-    "Nothing beats a %ADJECTIVE% %NOUN% with a %ADJECTIVE% %NOUN%.",
+    "Nothing beats a %ADJECTIVE% %NOUN% with a %ADJECTIVE% %NOUN%. %EMOJI%",
     "%NOUN% is soooooooo %ADJECTIVE%.",
-    "%NOUN% %VERB% %ADVERB%!",
+    "%NOUN% %VERB% %ADVERB%! %EMOJI%",
     "%ADVERB% %VERB% %NOUN%.",
-    "%ADJECTIVE% %ADJECTIVE% %ADJECTIVE% %NOUN% is warm as %NOUN%.",
-    "Ever so %ADVERB%, ever so %ADVERB%",
-    "On Christmas eve, every %NOUN% %VERB% %ADVERB%",
+    "%ADJECTIVE% %ADJECTIVE% %ADJECTIVE% %NOUN% is warm as %NOUN%. %EMOJI%",
+    "Ever so %ADVERB%, ever so %ADVERB%.",
+    "On Christmas eve, every %NOUN% %VERB% %ADVERB%. %EMOJI%",
     "%NOUN% %VERB% and %VERB%. %ADVERB%!",
-    "%VERB% and %VERB%, yes it's the %NOUN%",
+    "%VERB% and %VERB%, yes it's the %NOUN%. %EMOJI%",
 ]
 
 export default{

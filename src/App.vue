@@ -25,7 +25,7 @@
         <div class="result-content text-lg" v-html="sentencesHtml"></div>
 
         <div class="mt-8">
-          <button @click="copyToClipBoard" class="p-4 mr-2 bg-red-400 text-white rounded">Copy to your clipboard</button>
+          <button @click="copyToClipBoard" class="p-4 mr-2 bg-red-400 text-white rounded">Copy to your clipboard </button>
           <a @click="tryAgain" class="block text-red-400 cursor-pointer">or try again</a>
         </div>
       </div>

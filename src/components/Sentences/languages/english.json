@@ -3,6 +3,9 @@
       "noun": [
         "turkey", "ice", "cold", "snow", "snowman", "reindeer", "santa claus", "family", "bell", "gingerbread", "chimney", "gift", "turkey", "bow", "candy", "carol", "celebration", "starlights", "christmas", "christmas eve", "christmas tree", "rudolf", "candy cane", "decorations", "fireplace", "olaf", "red", "white", "green", "mistletoe", "ornament", "christmas bauble", "present", "elves", "ribbon", "Santa's workshop", "sleigh bells", "season", "christmas sweater", "season's greetings", "snowfall", "snowflake", "Santa's list", "tinsel", "tradition", "wonder", "winter", "wintertime", "xmas", "advent", "angel", "candle", "candlelight", "cookies", "Christmas cookies", "Dasher", "Party", "Secret Santa"
       ],
+      "emoji": [
+        "🎄", "🎅🏻", "🦌"
+      ],
       "verb": [
         "sings", "dances", "carolings", "celebrates", "loves", "enjoys", "eats", "drinks", "ice skates", "decorates"
       ],
@@ -19,6 +22,9 @@
     "negative": {
       "noun": [
         "turkey", "ice", "cold", "snow", "snowman", "spider", "skeleton", "grinch", "hollow", "edward scissorhands", "jack skellington", "Home Alone", "The Grinch", "Witch", "zombie", "Fake Santa"
+      ],
+      "emoji": [
+        "💀", "⚰️", "🧟", "😱"
       ],
       "verb": [
         "cries", "screams", "runs", "falls", "steals"
