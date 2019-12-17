@@ -93,8 +93,6 @@ h1 {
 
 .-with-element::after{
     content: '';
-    /* background-image: url("https://image.flaticon.com/icons/png/512/892/892817.png"); */
-    background-image: url("https://image.flaticon.com/icons/png/512/1359/1359035.png");
     width: 32px;
     height: 32px;
     display: block;
@@ -104,6 +102,12 @@ h1 {
     background-size: contain;
     left: 48%;
 }
+.-with-element.-eerie::after{
+    background-image: url("/assets/mistletoe-eerie.svg");
+}
+.-with-element.-merry::after{
+    background-image: url("/assets/mistletoe-merry.svg");
+}
 
 .border-dasher{
     @apply border-t-8 border-r-8 border-l-8 fixed z-10 mx-auto my-auto top-0 left-0 ;
@@ -112,7 +116,7 @@ h1 {
 }
 
 hr {
-    background-image: linear-gradient(90deg, transparent, white, transparent);
+    background-image: linear-gradient(90deg, transparent, rgba(0,0,0), transparent);
     border: 0;
     height: 1px;
 }

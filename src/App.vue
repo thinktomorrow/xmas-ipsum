@@ -5,7 +5,7 @@
       <h1 class="text-shadow font-base leading-none capitalize tracking-widest">CHRISTMAS IPSUM</h1>
       <p class="text-white">Don't know what to write on your Xmas card? <a href="https://thinktomorrow.be/wie-we-zijn" class="underline hover:bg-black hover:text-white">We</a>'ve got you covered. ⤵️</p>
     </header>
-    <hr class="w-1/2 mx-auto my-12 opacity-25">
+    <hr class="w-1/2 mx-auto my-12 opacity-50">
     <div class="text-center relative z-20">
       <h2 class="text-white text-4xl" :class="this.moodChecker ? 'font-merry' : 'font-eerie'">Which Christmas do you prefer?</h2>
     </div>
@@ -30,15 +30,15 @@
       <div v-if="sentences">
         <div class="result-content text-lg" v-html="sentencesHtml"></div>
 
-        <div class="mt-8 mb-24">
+        <div class="mt-8">
           <button @click="copyToClipBoard" class="btn" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
           <a @click="tryAgain" class="block cursor-pointer"  :class="this.moodChecker ? 'text-red-600' : ' text-red-400'">or try again</a>
         </div>
       </div>
 
       <div v-else>
-        <div class="mt-8 mb-24">
-          <button @click="letsGenerate" class="btn -with-element" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500 text-black'">
+        <div class="mt-8">
+          <button @click="letsGenerate" class="btn -with-element bg-red-600 hover:bg-red-500" :class="this.moodChecker ? '-merry' : '-eerie'">
             Generate some
               <template v-if="this.moodChecker">jolly</template>
               <template v-else >hollow</template>
@@ -51,8 +51,8 @@
       <!-- <div class="border-dasher" :class="this.moodChecker ? 'border-dotted' : 'border-dashed'"></div>   -->
     </div>
 
-	<footer class="w-full fixed z-0 bottom-0 left-0 right-0 h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-contain bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
-    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 pb-4 text-xs hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
+	<footer class="w-full h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-contain bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
+    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 mb-4 text-xs hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
   </main>
 </template>
 
