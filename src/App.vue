@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green-700 text-white' : 'bg-grey text-white'">
 
-    <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-8 sm:py-16">
+    <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-8 sm:py-16" style="min-height: calc(100vh - 6rem)">
 
       <header class="text-center text-white relative z-20">
         <h1 class="text-shadow font-base leading-none capitalize tracking-widest font-eerie">XMAS IPSUM</h1>
