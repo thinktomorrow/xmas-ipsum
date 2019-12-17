@@ -10,29 +10,9 @@
 
       <hr class="w-1/2 mx-auto my-6 opacity-50">
 
-      <div class="text-center relative z-20">
-        <h2 class="text-white text-5xl font-eerie">Which Christmas do you prefer?</h2>
-      </div>
-
-      <div style="height: 450px" class="z-20 relative -mt-10">
-        <div id="merry-animation" class="h-full"></div>
-        <div id="eerie-animation" class="h-full hidden"></div>
-      </div>
-
-      <div class="flex justify-center text-center relative z-20 -mt-20">
-        <div class="flex">
-          <p class="text-white text-center font-eerie text-3xl">Eerie</p>
-          <div class="checkbox-container">
-            <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
-            <div class="checkbox-circle bg-red-100"></div>
-          </div>
-          <p class="text-white text-center font-merry text-3xl">Merry</p>
-        </div>
-      </div>
-
       <div class="w-full md:w-2/3 mx-auto text-center mt-16 relative z-20">
 
-        <div v-if="sentences">
+        <div v-show="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
           <div class="mt-8">
             <button @click="copyToClipBoard" class="btn mb-2" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
@@ -40,13 +20,30 @@
           </div>
         </div>
 
-        <div v-else>
+        <div v-show="!sentences">
+          <div class="text-center relative z-20">
+            <h2 class="text-white text-5xl font-eerie">Which Christmas do you prefer?</h2>
+          </div>
+
+          <div style="height: 450px" class="z-20 relative -mt-10">
+            <div id="merry-animation" class="h-full"></div>
+            <div id="eerie-animation" class="h-full hidden"></div>
+          </div>
+
+          <div class="flex justify-center text-center relative z-20 -mt-20">
+            <div class="flex">
+              <p class="text-white text-center font-eerie text-3xl">Eerie</p>
+              <div class="checkbox-container">
+                <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
+                <div class="checkbox-circle bg-red-100"></div>
+              </div>
+              <p class="text-white text-center font-merry text-3xl">Merry</p>
+            </div>
+          </div>
+
           <div class="mt-8">
             <button @click="letsGenerate" class="btn -with-element bg-red-600 hover:bg-red-500" :class="this.moodChecker ? '-merry' : '-eerie'">
-              Generate some
-                <template v-if="this.moodChecker">jolly</template>
-                <template v-else >hollow</template>
-              text
+              {{ buttonLabel }}
             </button>
           </div>
 
@@ -77,6 +74,7 @@ export default {
     return {
         sentences: '',
         moodChecker: true,
+        buttonLabelText: 'Generate some jibberish',
     }
   },
   mounted: function() {
@@ -88,13 +86,26 @@ export default {
     moodMerry(){
       return !!this.moodChecker;
     },
+    buttonLabel(){
+      return this.buttonLabelText;
+      // <template v-if="this.moodChecker">jolly</template>
+      //         <template v-else >hollow</template>
+      // text
+    },
     sentencesHtml(){
       return '<p>'+ this.sentences.replace(/\n\n/g, '</p><p>')  + '</p>';
     }
   },
   methods:{
     letsGenerate(){
-      this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
+
+      this.buttonLabelText = 'Generating...';
+
+      setTimeout(() =>{
+        this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
+        this.buttonLabelText = 'Generate some jibberish';
+      }, 1500);
+
     },
     tryAgain(){
       this.sentences = '';
