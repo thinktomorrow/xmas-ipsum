@@ -15,7 +15,7 @@
         <div v-show="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
           <div class="mt-8">
-            <button @click="copyToClipBoard" class="btn mb-2" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
+            <button @click="copyToClipBoard" class="btn mb-2 focus:outline-none" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
             <a @click="tryAgain" class="block cursor-pointer text-white">or try again</a>
           </div>
         </div>
@@ -42,7 +42,7 @@
           </div>
 
           <div class="mt-8">
-            <button @click="letsGenerate" class="btn relative -with-element bg-red-600 hover:bg-red-500" :class="this.moodChecker ? '-merry' : '-eerie'">
+            <button @click="letsGenerate" class="btn relative -with-element bg-red-600 hover:bg-red-500 focus:outline-none" :class="this.moodChecker ? '-merry' : '-eerie'">
               {{ buttonLabel }}
             </button>
           </div>
