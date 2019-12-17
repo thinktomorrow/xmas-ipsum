@@ -22,7 +22,7 @@ html, body, button, p {
 .bg-brown{ background-color: #332424; }
 
 h1 {
-    @apply text-6xl font-black text-white;
+    @apply text-5xl font-black text-white;
 }
 
 
