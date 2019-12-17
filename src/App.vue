@@ -58,7 +58,7 @@
 
     <footer class="w-full h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-cover bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
 
-    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 mb-4 font-normal hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
+    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 mb-4 font-normal hover:text-primary hover:underline">Made with &#9825; by Think Tomorrow.</a></footer>
 
   </main>
 </template>
