@@ -34,7 +34,7 @@
             <div class="flex">
               <p class="text-white text-center font-eerie text-3xl w-32">Eerie</p>
               <div class="checkbox-container">
-                <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox" @change="changeFavicon('test')">
+                <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
                 <div class="checkbox-circle bg-red-100"></div>
               </div>
               <p class="text-white text-center font-merry text-3xl w-32">Merry</p>
@@ -118,18 +118,6 @@ export default {
       setTimeout(() => {
         e.target.innerHTML = oldText;
       }, 2000);
-    },
-    changeFavicon(src) {
-      // document.head = document.head || document.getElementsByTagName('head')[0];
-      var link = document.createElement('link'),
-          oldLink = document.getElementById('dynamic-favicon');
-      link.id = 'dynamic-favicon';
-      link.rel = 'shortcut icon';
-      link.href = src;
-      if (oldLink) {
-        document.head.removeChild(oldLink);
-      }
-      document.head.appendChild(link);
     }
   }
 }
