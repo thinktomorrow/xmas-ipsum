@@ -99,7 +99,7 @@ export default {
   methods:{
     letsGenerate(){
 
-      this.buttonLabelText = 'Generating...';
+      this.buttonLabelText = 'Ho ho hold on...';
 
       setTimeout(() =>{
         this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
@@ -110,8 +110,14 @@ export default {
     tryAgain(){
       this.sentences = '';
     },
-    copyToClipBoard(){
+    copyToClipBoard(e){
       copy(this.sentences);
+
+      var oldText = e.target.innerHTML;
+      e.target.innerHTML = 'Copied!'
+      setTimeout(() => {
+        e.target.innerHTML = oldText;
+      }, 2000);
     }
   }
 }

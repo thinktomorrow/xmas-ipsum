@@ -12,6 +12,7 @@
     "copy-text-to-clipboard": "^2.1.1",
     "core-js": "^3.4.3",
     "json-loader": "^0.5.7",
+    "justforshow": "^0.1.11",
     "lottie-web": "^5.5.10",
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.10"
