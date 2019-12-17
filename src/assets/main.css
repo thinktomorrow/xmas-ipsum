@@ -85,7 +85,7 @@ h1 {
 
 .result-content p{
     margin-bottom:1rem;
-  }
+}
 
 .h-half{
     height: 50vh;
@@ -100,7 +100,7 @@ h1 {
     z-index: 10;
     top: -15px;
     background-size: contain;
-    left: 48%;
+    left: 45%;
 }
 .-with-element.-eerie::after{
     background-image: url("/assets/mistletoe-eerie.svg");
