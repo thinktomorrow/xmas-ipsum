@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="w-full md:w-2/3 mx-auto text-center mt-16 relative z-20">
+      <div class="w-full xl:w-3/4 mx-auto text-center mt-16 relative z-20">
 
         <div v-if="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
