@@ -24,7 +24,7 @@
           <p class="text-white text-center font-eerie text-3xl">Eerie</p>
           <div class="checkbox-container">
             <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
-            <div class="checkbox-circle bg-red-100"></div>
+            <div class="checkbox-circle bg-white"></div>
           </div>
           <p class="text-white text-center font-merry text-3xl">Merry</p>
         </div>
