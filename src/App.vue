@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green-700 text-white' : 'bg-grey text-white'">
 
-    <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-16">
+    <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-8 sm:py-16" style="min-height: calc(100vh - 6rem)">
 
       <header class="text-center text-white relative z-20">
         <h1 class="text-shadow font-base leading-none capitalize tracking-widest font-eerie">XMAS IPSUM</h1>
@@ -10,7 +10,7 @@
 
       <hr class="w-1/2 mx-auto my-6 opacity-50">
 
-      <div class="w-full lg:w-3/4 mx-auto text-center mt-8 relative z-20">
+      <div class="w-full lg:w-3/4 mx-auto text-center sm:mt-8 relative z-20">
 
         <div v-show="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
@@ -22,22 +22,22 @@
 
         <div v-show="!sentences">
           <div class="text-center relative z-20">
-            <h2 class="text-white text-5xl font-eerie">Which Christmas do you prefer?</h2>
+            <h2 class="text-white text-4xl sm:text-5xl font-eerie">Which Christmas do you prefer?</h2>
           </div>
 
-          <div style="height: 450px" class="z-20 relative -mt-10">
+          <div class="z-20 relative h-96 -mt-10">
             <div id="merry-animation" class="h-full"></div>
             <div id="eerie-animation" class="h-full hidden"></div>
           </div>
 
           <div class="flex justify-center text-center relative z-20 -mt-20">
             <div class="flex">
-              <p class="text-white text-center font-eerie text-3xl w-32">Eerie</p>
+              <p class="text-white text-center font-eerie text-3xl sm:w-32">Eerie</p>
               <div class="checkbox-container">
                 <input v-model="moodChecker" data-event="switch" :data-label="this.moodChecker ? 'merry' : 'eerie'" id="christmas-switch" type="checkbox" class="checkbox">
                 <div class="checkbox-circle bg-red-100"></div>
               </div>
-              <p class="text-white text-center font-merry text-3xl w-32">Merry</p>
+              <p class="text-white text-center font-merry text-3xl sm:w-32">Merry</p>
             </div>
           </div>
 
