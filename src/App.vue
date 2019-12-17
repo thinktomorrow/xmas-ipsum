@@ -1,58 +1,65 @@
 <template>
-  <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green text-black' : 'bg-grey text-white'">
-  <div class="w-3/5 mx-auto py-8">
-    <header class="text-center mt-3 text-white relative z-20">
-      <h1 class="text-shadow font-base leading-none capitalize tracking-widest">CHRISTMAS IPSUM</h1>
-      <p class="text-white">Don't know what to write on your Xmas card? <a href="https://thinktomorrow.be/wie-we-zijn" class="underline hover:bg-black hover:text-white">We</a>'ve got you covered. ⤵️</p>
-    </header>
-    <hr class="w-1/2 mx-auto my-12 opacity-50">
-    <div class="text-center relative z-20">
-      <h2 class="text-white text-4xl" :class="this.moodChecker ? 'font-merry' : 'font-eerie'">Which Christmas do you prefer?</h2>
-    </div>
-    <div style="height: 450px" class="z-20 relative -mt-10">
-      <div id="merry-animation" class="h-full"></div>
-      <div id="eerie-animation" class="h-full hidden"></div>
-    </div>
+  <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green-700 text-white' : 'bg-grey text-white'">
 
-    <div class="flex justify-center text-center relative z-20 -mt-20">
-      <div class="flex">
-        <p class="text-white text-center font-eerie text-3xl">Eerie</p>
-        <div class="checkbox-container">
-          <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
-          <div class="checkbox-circle bg-red-100"></div>
-        </div>
-        <p class="text-white text-center font-merry text-3xl">Merry</p>
+    <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-16">
+
+      <header class="text-center text-white relative z-20">
+        <h1 class="text-shadow font-base leading-none capitalize tracking-widest">CHRISTMAS IPSUM</h1>
+        <p class="text-white">Don't know what to write on your Xmas card? <a href="https://thinktomorrow.be/wie-we-zijn" class="underline hover:bg-black hover:text-white">We</a>'ve got you covered. ⤵️</p>
+      </header>
+
+      <hr class="w-1/2 mx-auto my-6 opacity-50">
+
+      <div class="text-center relative z-20">
+        <h2 class="text-white text-5xl" :class="this.moodChecker ? 'font-merry' : 'font-eerie'">Which Christmas do you prefer?</h2>
       </div>
-    </div>
+      
+      <div style="height: 450px" class="z-20 relative -mt-10">
+        <div id="merry-animation" class="h-full"></div>
+        <div id="eerie-animation" class="h-full hidden"></div>
+      </div>
 
-
-    <div class="w-2/3 mx-auto text-center mt-16 relative z-20">
-      <div v-if="sentences">
-        <div class="result-content text-lg" v-html="sentencesHtml"></div>
-
-        <div class="mt-8">
-          <button @click="copyToClipBoard" class="btn" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
-          <a @click="tryAgain" class="block cursor-pointer"  :class="this.moodChecker ? 'text-red-600' : ' text-red-400'">or try again</a>
+      <div class="flex justify-center text-center relative z-20 -mt-20">
+        <div class="flex">
+          <p class="text-white text-center font-eerie text-3xl">Eerie</p>
+          <div class="checkbox-container">
+            <input v-model="moodChecker" id="christmas-switch" type="checkbox" class="checkbox">
+            <div class="checkbox-circle bg-red-100"></div>
+          </div>
+          <p class="text-white text-center font-merry text-3xl">Merry</p>
         </div>
       </div>
 
-      <div v-else>
-        <div class="mt-8">
-          <button @click="letsGenerate" class="btn -with-element bg-red-600 hover:bg-red-500" :class="this.moodChecker ? '-merry' : '-eerie'">
-            Generate some
-              <template v-if="this.moodChecker">jolly</template>
-              <template v-else >hollow</template>
-            text
-          </button>
+      <div class="w-full md:w-2/3 mx-auto text-center mt-16 relative z-20">
+
+        <div v-if="sentences">
+          <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
+          <div class="mt-8">
+            <button @click="copyToClipBoard" class="btn mb-2" :class="this.moodChecker ? 'bg-red-600 hover:bg-red-500' : ' bg-red-400 hover:bg-red-500'">Copy to your clipboard 📋</button>
+            <a @click="tryAgain" class="block cursor-pointer text-white">or try again</a>
+          </div>
         </div>
+
+        <div v-else>
+          <div class="mt-8">
+            <button @click="letsGenerate" class="btn -with-element bg-red-600 hover:bg-red-500" :class="this.moodChecker ? '-merry' : '-eerie'">
+              Generate some
+                <template v-if="this.moodChecker">jolly</template>
+                <template v-else >hollow</template>
+              text
+            </button>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
 
-      <!-- <div class="border-dasher" :class="this.moodChecker ? 'border-dotted' : 'border-dashed'"></div>   -->
-    </div>
+    <footer class="w-full h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-cover bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
+      
+    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 mb-4 font-normal hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
 
-	<footer class="w-full h-24 z-50 bg-snowpile flex items-end justify-center bg-bottom bg-contain bg-repeat-x" style="background-image:url('assets/snowpile.svg')">
-    <a href="https://thinktomorrow.be" target="_blank" class="text-gray-500 mb-4 text-xs hover:text-primary hover:underline">Gemaakt met &#9825; in Herentals.</a></footer>
   </main>
 </template>
 
