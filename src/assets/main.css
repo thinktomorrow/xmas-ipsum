@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900&display=swap'); */
-@import url('https://fonts.googleapis.com/css?family=Heebo:500,900|Mountains+of+Christmas|Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700,800,900|Mountains+of+Christmas|Sacramento&display=swap');
 
 html, body, button, p {
     font-family: 'Heebo', sans-serif;
@@ -71,8 +71,8 @@ h1 {
     left: 8px;
     width: 20px;
     height: 20px;
-    background: linear-gradient(315deg, rgba(255,22,84,1) 0%, rgba(255,22,84,1) 65%, rgba(255,255,255,1) 100%);
-    /* background-color: #FF1654; */
+    background: linear-gradient(315deg, #910002 0%, #910002 65%, rgba(255,255,255,1) 100%);
+    /* background-color: #910002; */
     border-radius: 50%;
     border: 2px solid black;
     transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
