@@ -8,12 +8,19 @@
           <p class="text-white mt-4">Because you'll want to put some holiday spirit in your lorem ipsum.</p>
       </header>
 
-      <div id="santa-sleigh-wrapper" class="absolute left-0 right-0 -mt-10 hidden">
-        <div id="santa-sleigh" class="w-64" style="right: 100%"></div>
-      </div>
+      <transition name="fade-in">
+        <transition name="santa-sleigh">
+          <div v-show="showSleighAnimation" class="absolute left-0 right-0 -mt-10">
+            <div class="w-full" style="transform: translateX(100%)">
+              <div id="santa-sleigh" class="w-64"></div>
+            </div>
+          </div>
+        </transition>
+      </transition>
+
       <!-- <hr class="w-1/2 mx-auto my-6 opacity-50"> -->
 
-      <div class="w-full lg:w-3/4 mx-auto mt-20 text-center relative z-20">
+      <div class="w-full lg:w-3/4 mx-auto mt-16 text-center relative z-20">
 
         <div v-show="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
@@ -78,6 +85,7 @@ export default {
         sentences: '',
         moodChecker: true,
         buttonLabelText: 'Generate some jibberish',
+        showSleighAnimation: false,
     }
   },
   mounted: function() {
@@ -92,9 +100,6 @@ export default {
     },
     buttonLabel(){
       return this.buttonLabelText;
-      // <template v-if="this.moodChecker">jolly</template>
-      //         <template v-else >hollow</template>
-      // text
     },
     sentencesHtml(){
       return '<p>'+ this.sentences.replace(/\n\n/g, '</p><p>')  + '</p>';
@@ -105,8 +110,7 @@ export default {
 
       this.buttonLabelText = 'Ho ho hold on...';
 
-      document.getElementById('santa-sleigh-wrapper').classList.add('animation-sleigh');
-      document.getElementById('santa-sleigh-wrapper').classList.remove('hidden');
+      this.showSleighAnimation = true;
 
       setTimeout(() =>{
         this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
@@ -116,6 +120,7 @@ export default {
     },
     tryAgain(){
       this.sentences = '';
+      this.showSleighAnimation = false;
     },
     copyToClipBoard(e){
       copy(this.sentences);

@@ -198,27 +198,26 @@ hr {
     }
   }
 
-.animation-sleigh {
-  animation-name: sleigh;
-  animation-duration: 7.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+.santa-sleigh-enter-active {
+  transition: all 10s linear;
+}
+.santa-sleigh-leave-active {
+  transition: all 2s ease;
+}
+.santa-sleigh-enter {
+  transform: translateX(-125%);
+}
+.santa-sleigh-leave-to  {
+  opacity: 0;
 }
 
-@keyframes sleigh {
-  0% {
-    transform: translateX(-25%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(125%);
-    opacity: 0;
-  }
+.fade-in-enter-active {
+  transition: all 2s ease;
+}
+.santa-sleigh-enter {
+  opacity: 0;
+}
+.santa-sleigh-leave-to  {
+  opacity: 0;
 }
   
