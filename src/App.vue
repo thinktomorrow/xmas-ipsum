@@ -1,5 +1,5 @@
 <template>
-  <main id="app" class="w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green-700 text-white' : 'bg-grey text-white'">
+  <main id="app" class="relative w-full h-full min-h-screen" :class="this.moodChecker ? 'bg-green-700 text-white' : 'bg-grey text-white'">
 
     <div class="w-5/6 md:w-4/5 lg:w-3/5 mx-auto py-8 sm:py-16" style="min-height: calc(100vh - 6rem)">
 
@@ -8,9 +8,12 @@
           <p class="text-white mt-4">Because you'll want to put some holiday spirit in your lorem ipsum.</p>
       </header>
 
-      <hr class="w-1/2 mx-auto my-6 opacity-50">
+      <div id="santa-sleigh-wrapper" class="absolute left-0 right-0 -mt-10 hidden">
+        <div id="santa-sleigh" class="w-64" style="right: 100%"></div>
+      </div>
+      <!-- <hr class="w-1/2 mx-auto my-6 opacity-50"> -->
 
-      <div class="w-full lg:w-3/4 mx-auto text-center sm:mt-8 relative z-20">
+      <div class="w-full lg:w-3/4 mx-auto mt-20 text-center relative z-20">
 
         <div v-show="sentences">
           <div class="result-content text-lg leading-relaxed" v-html="sentencesHtml"></div>
@@ -25,7 +28,7 @@
             <h2 class="text-white text-4xl sm:text-5xl font-eerie">Which Christmas do you prefer?</h2>
           </div>
 
-          <div class="z-20 relative h-96 -mt-10">
+          <div class="z-20 relative h-96 -mt-20 sm:-mt-10">
             <div id="merry-animation" class="h-full"></div>
             <div id="eerie-animation" class="h-full hidden"></div>
           </div>
@@ -80,6 +83,7 @@ export default {
   mounted: function() {
       Animation.loadAnimation('merry-animation');
       Animation.loadAnimation('eerie-animation');
+      Animation.loadAnimation('santa-sleigh');
       Animation.loadSwitch();
   },
   computed:{
@@ -100,6 +104,9 @@ export default {
     letsGenerate(){
 
       this.buttonLabelText = 'Ho ho hold on...';
+
+      document.getElementById('santa-sleigh-wrapper').classList.add('animation-sleigh');
+      document.getElementById('santa-sleigh-wrapper').classList.remove('hidden');
 
       setTimeout(() =>{
         this.sentences = SentenceGenerator.generate(20, this.moodChecker ? 'positive' : 'negative');
