@@ -16,6 +16,7 @@ export let sentenceFormats = [
     "On Christmas eve, every %NOUN% %VERB% %ADVERB%. %EMOJI%",
     "%NOUN% %VERB% and %VERB%. %ADVERB%!",
     "%VERB% and %VERB%, yes it's the %NOUN%. %EMOJI%",
+    "I love %ADJECTIVE% %NOUN% in the morning.",
 ]
 
 export default{
