@@ -199,10 +199,10 @@ hr {
   }
 
 .santa-sleigh-enter-active {
-  transition: all 10s linear;
+  transition: all 7.5s linear;
 }
 .santa-sleigh-leave-active {
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 .santa-sleigh-enter {
   transform: translateX(-125%);
@@ -212,7 +212,7 @@ hr {
 }
 
 .fade-in-enter-active {
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 .santa-sleigh-enter {
   opacity: 0;
