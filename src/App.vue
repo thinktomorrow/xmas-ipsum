@@ -32,10 +32,10 @@
 
         <div v-show="!sentences">
           <div class="text-center relative z-20">
-            <h2 class="text-white text-4xl sm:text-5xl font-eerie">Which Christmas do you prefer?</h2>
+            <h2 class="text-white text-4xl sm:text-5xl font-eerie leading-tight">Which Christmas do you prefer?</h2>
           </div>
 
-          <div class="z-20 relative h-96 -mt-20 sm:-mt-10">
+          <div class="z-20 relative h-96 -mt-10">
             <div id="merry-animation" class="h-full"></div>
             <div id="eerie-animation" class="h-full hidden"></div>
           </div>
