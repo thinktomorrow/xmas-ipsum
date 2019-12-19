@@ -21,7 +21,7 @@ html, body, button, p {
 .bg-green{ background-color: #124717; }
 .bg-brown{ background-color: #332424; }
 
-.text-grey{ color: #1e1e1e};
+.text-grey{ color: #1e1e1e; }
 
 h1 {
     @apply text-5xl font-black text-white;
