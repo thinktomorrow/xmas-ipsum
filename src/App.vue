@@ -13,7 +13,7 @@
           <div v-show="showSleighAnimation" class="absolute left-0 right-0 -mt-10">
             <div class="w-full relative" style="transform: translateX(100%)">
               <div id="santa-sleigh" class="w-64"></div>
-              <div class="absolute left-0 right-0 text-center text-green-700" style="top: 100%">christmas egg<br><br><a class="text-green-700" href="https://thinktomorrow.be">www.thinktomorrow.be</a></div>
+              <div class="absolute left-0 right-0 text-center" :class="this.moodChecker ? 'text-green-700' : 'text-grey'" style="top: 100%">christmas egg<br><br><a href="https://thinktomorrow.be">www.thinktomorrow.be</a></div>
             </div>
           </div>
         </transition>
