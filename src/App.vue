@@ -11,7 +11,8 @@
       <transition name="fade-in">
         <transition name="santa-sleigh">
           <div v-show="showSleighAnimation" class="absolute left-0 right-0 -mt-10">
-            <div class="w-full" style="transform: translateX(100%)">
+            <div class="w-full relative" style="transform: translateX(100%)">
+              <div class="absolute bottom-0 right-0 left-0 text-center text-green-700" style="-1">Happy Christmas<br><br><a class="text-green-700" href="https://thinktomorrow.be">www.thinktomorrow.be</a></div>
               <div id="santa-sleigh" class="w-64"></div>
             </div>
           </div>
